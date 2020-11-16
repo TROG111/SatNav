@@ -12,7 +12,7 @@ Installation:
     planetref.lua and atlas.lua can be obtained from the following GitLab url:  https://gitlab.com/JayleBreak/dualuniverse/-/tree/master/DUflightfiles/autoconf/custom
     
  2) Install a PB onto your ship and link it to: 1) the core, 2) a screen, 3) a databank - in this order please.  If you have Dimencia Hud installed in your Pilot Seat, then the databank in 3 should be the databank that is connected to the pilot seat.
- 3) Copy the most recent SatNav_??? file (currently that is SatNav_PB_2_0_0) into you copy paste buffer
+ 3) Copy the most recent SatNav_PB_Paste file (currently that is SatNav_PB_Paste_2_0_0) into you copy paste buffer
  4) In game, right click on you SatNav PB and select 'Advanced' / 'Paste LUA configuration from cliboard'
  5) Turn on screen, activate PB and you are ready to go.... good luck!
  
