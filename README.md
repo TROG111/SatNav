@@ -12,15 +12,20 @@ Installation:
     planetref.lua and atlas.lua can be obtained from the following GitLab url:  https://gitlab.com/JayleBreak/dualuniverse/-/tree/master/DUflightfiles/autoconf/custom
     
  2) Install a PB onto your ship and link it to: 1) the core, 2) a screen, 3) a databank - in this order please.  If you have Dimencia Hud installed in your Pilot Seat, then the databank in 3 should be the databank that is connected to the pilot seat.
+ 
  3) Copy the most recent SatNav_PB_Paste file (currently that is SatNav_PB_Paste_2_0_0) into you copy paste buffer
- 4) In game, right click on you SatNav PB and select 'Advanced' / 'Paste LUA configuration from cliboard'
+ 
+ 4) In game, right click on your SatNav PB and select 'Advanced' / 'Paste LUA configuration from cliboard'
+ 
  5) Turn on screen, activate PB and you are ready to go.... good luck!
  
  Integration with Dimencia Hud:
  1) edit the LUA in your pilot seat that has the Dimencia Hud installed
+ 
  2) create a new unit.start trigger and insert the following LUA code:
      unit.setTimer("spbTimer",5)
      firstTime = 1
+     
  3) create a new unit.tick(spbTimer) trigger and insert the following LUA code
      if firstTime == 1 then
          myAutopilotTarget = dbHud.getStringValue("SPBAutopilotTargetName")
@@ -36,9 +41,14 @@ Installation:
     end
  
  Usaged:
- 1) By default the PB is programmed with a select of locations including the market places on Alioth.  To add/edit/delect locations you will need to edit the system.start LUA code on your programming board.  This is relatively simple, open the system.start section of the LUA code on your PB and add/amend an entry in the table.
+ 1) By default the PB is programmed with a selection of locations including the market places on Alioth.  To add/edit/delect locations you will need to edit the system.start LUA code on your programming board.  This is relatively simple, open the system.start section of the LUA code on your PB and add/amend an entry in the table.  You can obtain ::pos(....) coordinates by simply cut/paste from the DUA map functions in game.
+ 
  2) The lefthand (light blue) panel of the SatNav lists all the DU planets.  You can page up/down this list using the correspondingly coloured arrow buttons below the table.  Clicking on a specific planet will display the list of Stored Locations for than planet in the righthand (purple) panel.
+ 
  3) You can page up/down the list of Stored Locations using the correspondingly coloured (purple) arrow buttons below the table.  Clicking on a specific location will print the locations coordinates into the LUA chat in a form that you can right click and set as your destination.  In addition, and if you have integrated with Dimencia Hud, the selected location will be sent to your pilot seat ready for use the next time you engage autopilot in the Hud.
+ 
  4) When you switch on the PB it will pull the list of Stored Locations from the attached databank - initially this may be empty if you have not already defined any Stored Locations using the Dimencia Hud 'Store Location' function.  In order to load the list of default stored locations (from 1 above) into the databank you must click on the SatNav 'Load Saved Locations' button.
- 5) If you wish to remove the 'old' list of stored locations on your databank, click on the SatNav 'Clear Saved Locations' button.
+ 
+ 5) If you wish to remove the 'old' list of stored locations from your databank, click on the SatNav 'Clear Saved Locations' button.
+ 
  6) When using your Dimencia Hud, you will find that the stored locations you loaded in 3 (above) are available using the Alt+1/Alt+2 keys..
