@@ -1,7 +1,7 @@
 
 Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager for :pos(.....) locations which includes integration into the Dimecia Hud to enable autopiloting to your stored locations.  SatNav can be used in stand alone mode or as integrated into the Dimencia Hud.
 
-Installation:
+###Installation:
 1) Ensure that you have the following libraries installed in your DU ProgramData LUA folder:
     <ProgrmData>/DualUniverse/Game/data/lua/dkjson.lua
     <ProgrmData>/DualUniverse/Game/data/lua/cpml/vec3.lua
@@ -19,7 +19,7 @@ Installation:
  
  5) Turn on screen, activate PB and you are ready to go.... good luck!
  
- Integration with Dimencia Hud:
+ ###Integration with Dimencia Hud:
  1) edit the LUA in your pilot seat that has the Dimencia Hud installed
  
  2) create a new unit.start trigger and insert the following LUA code:
@@ -40,7 +40,7 @@ Installation:
         firstTime = 0
     end
  
- Usaged:
+ ###Usaged:
  1) By default the PB is programmed with a selection of locations including the market places on Alioth.  To add/edit/delect locations you will need to edit the system.start LUA code on your programming board.  This is relatively simple, open the system.start section of the LUA code on your PB and add/amend an entry in the table.  You can obtain ::pos(....) coordinates by simply cut/paste from the DUA map functions in game.
  
  2) The lefthand (light blue) panel of the SatNav lists all the DU planets.  You can page up/down this list using the correspondingly coloured arrow buttons below the table.  Clicking on a specific planet will display the list of Stored Locations for than planet in the righthand (purple) panel.
