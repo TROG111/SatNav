@@ -20,13 +20,15 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
  5) Turn on screen, activate PB and you are ready to go.... good luck!
  
  ###Integration with Dimencia Hud:
- 1) edit the LUA in your pilot seat that has the Dimencia Hud installed
+ 1) ensure you have a recent version of the Dimencia Hud already loaded and configured on your pilot seat
  
- 2) create a new unit.start trigger and insert the following LUA code:
+ 2) edit the LUA in your pilot seat that has the Dimencia Hud installed
+ 
+ 3) create a new unit.start trigger and insert the following LUA code:
      unit.setTimer("spbTimer",5)
      firstTime = 1
      
- 3) create a new unit.tick(spbTimer) trigger and insert the following LUA code
+ 4) create a new unit.tick(spbTimer) trigger and insert the following LUA code
      if firstTime == 1 then
          myAutopilotTarget = dbHud.getStringValue("SPBAutopilotTargetName")
          if myAutopilotTarget ~= nil and myAutopilotTarget ~= "" then
@@ -52,6 +54,10 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
  5) If you wish to remove the 'old' list of stored locations from your databank, click on the SatNav 'Clear Saved Locations' button.
  
  6) When using your Dimencia Hud, you will find that the stored locations you loaded in 3 (above) are available using the Alt+1/Alt+2 keys..  However, since Dim Hud only loads its stored locations when it starts up, you will need to operate the SatNav application while you are not sitting in the pilot seat.
+ 
+ ###Known issues:
+ 
+ 1) if the SatNav app crashes the first time that you try to use it to load the default locations provided, this is sometimes caused by either you have linked the core, screen, databank in the wrong order, or the databank you are using has not been correctly configured by Dimencia Hud (or you are in stand alone mode).  Sometimes this can be fixd by pressing the on screen Clear Stored Locations button.
  
  ###Version history:
  
