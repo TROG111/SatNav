@@ -52,3 +52,7 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
  5) If you wish to remove the 'old' list of stored locations from your databank, click on the SatNav 'Clear Saved Locations' button.
  
  6) When using your Dimencia Hud, you will find that the stored locations you loaded in 3 (above) are available using the Alt+1/Alt+2 keys..  However, since Dim Hud only loads its stored locations when it starts up, you will need to operate the SatNav application while you are not sitting in the pilot seat.
+ 
+ ###Version history
+ 2_0_0 - Released version
+ 2_0_1 - pre-release version, use at your own risk.  Update includes location/planet distances and warp cell estimates.  verification of connection to Dimencia Hud.
