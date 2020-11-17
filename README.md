@@ -1,32 +1,40 @@
 
-Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager for :pos(.....) locations which includes integration into the Dimecia Hud to enable autopiloting to your stored locations.  SatNav can be used in stand alone mode or as integrated into the Dimencia Hud.
+Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager for `:pos(.....)` locations which includes integration into the `Dimecia Hud` to enable autopiloting to your stored locations.  SatNav can be used in stand alone mode or as integrated into the Dimencia Hud.
 
-###Installation:
+### Installation:
 1) Ensure that you have the following libraries installed in your DU ProgramData LUA folder:
-    <ProgrmData>/DualUniverse/Game/data/lua/dkjson.lua
-    <ProgrmData>/DualUniverse/Game/data/lua/cpml/vec3.lua
-    <ProgrmData>/DualUniverse/Game/data/lua/cpml/utils.lua
-    <ProgrmData>/DualUniverse/Game/data/lua/cpml/planetref.lua
-    <ProgrmData>/DualUniverse/Game/data/lua/cpml/atlas.lua
+
+    `<ProgrmData>/DualUniverse/Game/data/lua/dkjson.lua`
     
-    planetref.lua and atlas.lua can be obtained from the following GitLab url:  https://gitlab.com/JayleBreak/dualuniverse/-/tree/master/DUflightfiles/autoconf/custom
+    `<ProgrmData>/DualUniverse/Game/data/lua/cpml/vec3.lua`
+    
+    `<ProgrmData>/DualUniverse/Game/data/lua/cpml/utils.lua`
+    
+    `<ProgrmData>/DualUniverse/Game/data/lua/cpml/planetref.lua`
+    
+    `<ProgrmData>/DualUniverse/Game/data/lua/cpml/atlas.lua`
+    
+    `planetref.lua` and `atlas.lua` can be obtained from the following GitLab url:  https://gitlab.com/JayleBreak/dualuniverse/-/tree/master/DUflightfiles/autoconf/custom
     
  2) Install a PB onto your ship and link it to: 1) the core, 2) a screen, 3) a databank - in this order please.  If you have Dimencia Hud installed in your Pilot Seat, then the databank in 3 should be the databank that is connected to the pilot seat.
  
- 3) Copy the most recent SatNav_PB_Paste file (currently that is SatNav_PB_Paste_2_0_0) into you copy paste buffer
+ 3) Copy the most recent `SatNav_PB_Paste` file (currently that is `SatNav_PB_Paste_2_0_0`) into you copy paste buffer
  
  4) In game, right click on your SatNav PB and select 'Advanced' / 'Paste LUA configuration from cliboard'
  
  5) Turn on screen, activate PB and you are ready to go.... good luck!
  
- ###Integration with Dimencia Hud:
- 1) edit the LUA in your pilot seat that has the Dimencia Hud installed
+ ### Integration with Dimencia Hud:
+ 1) edit the LUA in your pilot seat that has the [Dimencia Hud installed`](https://github.com/Dimencia/DU-Orbital-Hud)
  
  2) create a new unit.start trigger and insert the following LUA code:
+     ```lua
      unit.setTimer("spbTimer",5)
      firstTime = 1
+     ```
      
- 3) create a new unit.tick(spbTimer) trigger and insert the following LUA code
+ 3) create a new `unit.tick(spbTimer)` trigger and insert the following LUA code
+    ```lua
      if firstTime == 1 then
          myAutopilotTarget = dbHud.getStringValue("SPBAutopilotTargetName")
          if myAutopilotTarget ~= nil and myAutopilotTarget ~= "" then
@@ -39,9 +47,10 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
         end
         firstTime = 0
     end
+    ```
  
- ###Usaged:
- 1) By default the PB is programmed with a selection of locations including the market places on Alioth.  To add/edit/delect locations you will need to edit the system.start LUA code on your programming board.  This is relatively simple, open the system.start section of the LUA code on your PB and add/amend an entry in the table.  You can obtain ::pos(....) coordinates by simply cut/paste from the DUA map functions in game.
+ ### Usage:
+ 1) By default the PB is programmed with a selection of locations including the market places on Alioth.  To add/edit/delect locations you will need to edit the system.start LUA code on your programming board.  This is relatively simple, open the system.start section of the LUA code on your PB and add/amend an entry in the table.  You can obtain `::pos(....)` coordinates by simply cut/paste from the DUA map functions in game.
  
  2) The lefthand (light blue) panel of the SatNav lists all the DU planets.  You can page up/down this list using the correspondingly coloured arrow buttons below the table.  Clicking on a specific planet will display the list of Stored Locations for than planet in the righthand (purple) panel.
  
@@ -53,7 +62,7 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
  
  6) When using your Dimencia Hud, you will find that the stored locations you loaded in 3 (above) are available using the Alt+1/Alt+2 keys..  However, since Dim Hud only loads its stored locations when it starts up, you will need to operate the SatNav application while you are not sitting in the pilot seat.
  
- ###Version history:
+ ### Version history:
  
  2_0_0 - Released version
  
