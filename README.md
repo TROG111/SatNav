@@ -25,22 +25,38 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
  2) edit the LUA in your pilot seat that has the Dimencia Hud installed
  
  3) create a new unit.start trigger and insert the following LUA code:
+ 
      unit.setTimer("spbTimer",5)
+     
      firstTime = 1
      
+     
  4) create a new unit.tick(spbTimer) trigger and insert the following LUA code
+ 
      if firstTime == 1 then
+     
          myAutopilotTarget = dbHud.getStringValue("SPBAutopilotTargetName")
+         
          if myAutopilotTarget ~= nil and myAutopilotTarget ~= "" then
+         
              for i=1,#AtlasOrdered do
+             
                 if AtlasOrdered[i].name == myAutopilotTarget then
+                
                     AutopilotTargetIndex = i
+                    
                     UpdateAutopilotTarget()
+                    
                 end
+                
              end
+             
         end
+        
         firstTime = 0
+        
     end
+    
  
  ###Usaged:
  1) By default the PB is programmed with a selection of locations including the market places on Alioth.  To add/edit/delect locations you will need to edit the system.start LUA code on your programming board.  This is relatively simple, open the system.start section of the LUA code on your PB and add/amend an entry in the table.  You can obtain ::pos(....) coordinates by simply cut/paste from the DUA map functions in game.
