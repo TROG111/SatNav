@@ -23,7 +23,7 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
  5) Turn on screen, activate PB and you are ready to go.... good luck!
  
  # Integration with Dimencia Hud:
- 1) ensure you have a recent version of the Dimencia Hud already loaded and configured on your pilot seat
+ 1) ensure you have a recent version of the Dimencia Hud already loaded and configured on your pilot seat.  Version 2_1_0 requires its own databank and you should not try to use the Dimencia Hud databank for both 3 and 4 (in the installation), this will likely cause problems and so is not supported.
  
  2) edit the LUA in your pilot seat that has the Dimencia Hud installed
  
