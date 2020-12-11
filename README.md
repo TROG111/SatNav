@@ -91,6 +91,7 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
  
  ###Known issues:
  
+ The order of linking the core/screen/databanks is extremely important.  They should always be: 1) core, 2) screen, 3) satnav databank, 4) Dimencia Hud databank, 5) satanav databank copy (used in the x SatNav command only)
  
  ###Version history:
  
