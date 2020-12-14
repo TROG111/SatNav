@@ -69,7 +69,7 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
  
     a) you can add new locations one at a time by pressing the 'Save Current Location' button which will create a new entry named 'SatNav Location (nnn)'.
     
-    b) you can edit the initial default locations in the Programming Board and add new entries (this is best used for bulk entry).  Open the PB for LUA editing and access the code in the unit.tick(loadwp) trigger.  Then simply edit or add new entries to this table.
+    b) you can edit the initial default locations in the Programming Board and add new entries (this is best used for bulk entry).  Open the PB for LUA editing and access the code in the unit.tick(loadwp) trigger.  Then simply edit or add new entries to this table.  Once you have the new exntries in the table execute the 'l SatNav' command below (5e) to relad the table.
     
  5) With the latest DU patch, SatNav now has a command line capability this provides the following function by typing into the LUA Chat panel:
  
@@ -79,19 +79,23 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
     
     c) 'c SatNav' - this will clear the SatNav databank of all stored locations
     
-    d) 'c Hud' - this will clear all Saved Locations from the Dimencia Hud databank
+    d) 'c Hud' - this will clear all Saved Locations from the Dimencia Hud databank (use with care!)
     
     e) 'l SatNav' - this will reload all of the default location from the SatNav PB (including any new ones that you may have added in step 4b above
     
     f) 'l Hud' - this will copy all of the Dimencia Hud stored locations from the Hud's databank into the SatNav databank
     
-    g) 'x SatNav' - this command will duplicate/clone the SatNav databank if a additional empty databank has been linked to the PB in slot 5.  The purpose of this feature is to enable users to copy their locations to multiple ships.
+    g) 'x SatNav' - this command will duplicate/clone the SatNav databank if an additional empty databank has been linked to the PB in slot 5.  The purpose of this feature is to enable users to copy their locations to multiple ships.
  
   5) When using your Dimencia Hud, you will find that the location you loaded in 3 (above) ha been renamed as 'SatNav Location' and is now available using the Alt+1/Alt+2 keys..  This will also have been set as the destination on the Dim Hud buttons screen.  Unlike previous versions of SatNav, we now only copy across a single location to Dim Hud - this is due to a limitation in the Dim Hud which would cause a cpu overload error if we copied all of the SatNav locations across.
  
  # Known issues:
  
- The order of linking the core/screen/databanks is extremely important.  They should always be: 1) core, 2) screen, 3) satnav databank, 4) Dimencia Hud databank, 5) satanav databank copy (used in the x SatNav command only)
+ The order of linking the core/screen/databanks is extremely important.  They should always be: 1) core, 2) screen, 3) satnav databank, 4) Dimencia Hud databank, 5) satanav databank copy (used in the x SatNav command only).
+ 
+ Some users are struggling to locate the DU LUA library folder on their local drives.  This is located below the directory that you originally installed DU.
+ 
+ Some users are struggling to download the planetref.lua and atlas.lua libraries.  These two files can be found in the GitLab URL link provided above, they must be copied in their entirity into the DU Lua library folder.  You can check them once you have downloaded by opening the lua files and seeing that they contain the appropriate LUA code.
  
  # Version history:
  
