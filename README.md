@@ -2,7 +2,7 @@
 Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager for :pos(.....) locations which includes integration into the Dimecia Hud to enable autopiloting to your stored locations.  SatNav can be used in stand alone mode or as integrated into the Dimencia Hud.  These instructions have been updated for SatNav version 2_1_0.  To install a previous version please contact me directly.
 
 # Installation:
-1) Ensure that you have the following libraries installed in your DU ProgramData LUA folder:
+1) Ensure that you have the following libraries installed in your DU <ProgramData> (the directory on your local drive in which you installed DU) LUA folder:
 
     <ProgrmData>/DualUniverse/Game/data/lua/cpml/vec3.lua
     
@@ -12,9 +12,9 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
     
     <ProgrmData>/DualUniverse/Game/data/lua/cpml/atlas.lua
     
-    planetref.lua and atlas.lua can be obtained from the following GitLab url:  https://gitlab.com/JayleBreak/dualuniverse/-/tree/master/DUflightfiles/autoconf/custom
+    planetref.lua and atlas.lua can be obtained from the following GitLab url: https://gitlab.com/JayleBreak/dualuniverse/-/blob/master/DUflightfiles/autoconf/custom/atlas.lua and https://gitlab.com/JayleBreak/dualuniverse/-/blob/master/DUflightfiles/autoconf/custom/planetref.lua
  
- 2) Install a PB onto your ship and link it to: 1) the core, 2) a screen, 3) a new databank (we shall call this the SatNav databank), 4) Dimencia Hud databank - in this order please.  
+ 2) Install a PB onto your ship and link it to: 1) the core, 2) a screen, 3) a new databank (we shall call this the SatNav databank), 4) Dimencia Hud databank - IN THIS ORDER PLEASE.  
  
  3) Copy the most recent SatNav_PB_Paste file (currently that is SatNav_PB_Paste_2_1_0) into you copy paste buffer
  
@@ -89,11 +89,11 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
  
   5) When using your Dimencia Hud, you will find that the location you loaded in 3 (above) ha been renamed as 'SatNav Location' and is now available using the Alt+1/Alt+2 keys..  This will also have been set as the destination on the Dim Hud buttons screen.  Unlike previous versions of SatNav, we now only copy across a single location to Dim Hud - this is due to a limitation in the Dim Hud which would cause a cpu overload error if we copied all of the SatNav locations across.
  
- ###Known issues:
+ # Known issues:
  
  The order of linking the core/screen/databanks is extremely important.  They should always be: 1) core, 2) screen, 3) satnav databank, 4) Dimencia Hud databank, 5) satanav databank copy (used in the x SatNav command only)
  
- ###Version history:
+ # Version history:
  
  2_0_0 - Released version
  
