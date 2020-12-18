@@ -28,10 +28,11 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
  2) edit the LUA in your pilot seat that has the Dimencia Hud installed
  
  3) create a new unit.start trigger and insert the following LUA code:
- 
-     unit.setTimer("spbTimer",5)
-     
-     myAutopilotTarget=""
+    
+        unit.setTimer("spbTimer",5)
+        
+        mmyAutopilotTarget=""
+        
       
  4) create a new unit.tick(spbTimer) trigger and insert the following LUA code
     
