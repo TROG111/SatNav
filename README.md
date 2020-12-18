@@ -31,7 +31,7 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
     
         unit.setTimer("spbTimer",5)
         
-        mmyAutopilotTarget=""
+        myAutopilotTarget=""
         
       
  4) create a new unit.tick(spbTimer) trigger and insert the following LUA code
