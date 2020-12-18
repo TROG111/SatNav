@@ -48,8 +48,6 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
             
                 AutopilotTargetIndex = i
                 
-                system.print("Index = "..AutopilotTargetIndex.." "..AtlasOrdered[i].name)
-                
                 UpdateAutopilotTarget()
                 
             end
