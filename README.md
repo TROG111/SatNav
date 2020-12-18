@@ -14,9 +14,9 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
     
     planetref.lua and atlas.lua can be obtained from the following GitLab url: https://gitlab.com/JayleBreak/dualuniverse/-/blob/master/DUflightfiles/autoconf/custom/atlas.lua and https://gitlab.com/JayleBreak/dualuniverse/-/blob/master/DUflightfiles/autoconf/custom/planetref.lua.  On the GitLab pages, click the download button and when prompted for a filename, make sure that the filename is only atlas.lua and planetref.lua and not the given long name.
  
- 2) Install a PB onto your ship and link it to: 1) the core, 2) a screen, 3) a new databank (we shall call this the SatNav databank), 4) Dimencia Hud databank - IN THIS ORDER PLEASE.  
+ 2) Install a PB onto your ship and link it to: 1) the core, 2) a screen, 3) a new (empty) databank (we shall call this the SatNav databank), 4) Dimencia Hud databank - IN THIS ORDER PLEASE.  The SatNav databank should be either completely empty (remove dynamic content while the databank is in you inventory before placing it) or a SatNav databank from version 2_1_0 or 2_1_1.
  
- 3) Copy the most recent SatNav_PB_Paste file (currently that is SatNav_PB_Paste_2_1_1) into you copy paste buffer
+ 3) Copy the most recent SatNav_PB_Paste file (currently that is SatNav_PB_Paste_2_1_2) into you copy paste buffer
  
  4) In game, right click on your SatNav PB and select 'Advanced' / 'Paste LUA configuration from cliboard'
  
@@ -97,6 +97,9 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
  
  Some users are struggling to download the planetref.lua and atlas.lua libraries.  These two files can be found in the GitLab URL link provided above, they must be copied in their entirity into the DU Lua library folder.  You can check them once you have downloaded by opening the lua files and seeing that they contain the appropriate LUA code.
  
+ I have recently experience a problem with DimHud linking to the incorrect databank when I did a clean new DimHud configuration.  The outcome of this is that it may corrupt the content of the SatNav databank (for example if DimHud has linked to the SatNav databank).  Therefore, the following is my recommendation:
+ a) before you do a DimHud update, always back up your SatNav databank (using the 'x SatNav' command described above) and then remove the backup copy into your inventory; b) immediately after doing a DimHud update, check the databank that is linked to the DimHud pilot seat.  If it is the incorrect databank, then remove the link and manually link to the correct DimHud databank - do this BEFORE activating DimHud for the first time after the update.
+ 
  # Version history:
  
  2_0_0 - Released version
@@ -108,3 +111,5 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
  2_1_0 - updated to avoid cpu overload problems and utilise the new setWaypoint and inputText features of DU 0.23
  
  2_1_1 - update includes: 1) attempt to try and avoid installation issues with linking databanks in wrong order; 2) added fix for new Space locations which were always being assigned to planets instead of 'Space'; 3) a few bug fixes
+ 
+ 2_1_2 - update includes: 1) improved avoidance of databank linking issues during installation; 3) improved readability of screens: a) highlighting of selected planets/location is now shown by a bar rather than a font colour change; b) 4 LUA parameters have been added to allow users to change the colours for Planet Panel Backgroun; Location Panel Background; Panel font colour; and highlight bar colour.
