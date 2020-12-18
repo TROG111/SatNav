@@ -34,14 +34,14 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
      myAutopilotTarget=""
       
  4) create a new unit.tick(spbTimer) trigger and insert the following LUA code
- 
-    prevAutopilotTarget = myAutopilotTarget
     
-    myAutopilotTarget = dbHud.getStringValue("SPBAutopilotTargetName")
-    
-    if myAutopilotTarget ~= nil and myAutopilotTarget ~= "" and myAutopilotTarget ~= prevAutopilotTarget then
-    
-        for i=1,#AtlasOrdered do
+        prevAutopilotTarget = myAutopilotTarget
+        
+        myAutopilotTarget = dbHud.getStringValue("SPBAutopilotTargetName")
+        
+        if myAutopilotTarget ~= nil and myAutopilotTarget ~= "" and myAutopilotTarget ~= prevAutopilotTarget then
+        
+          for i=1,#AtlasOrdered do
         
             if AtlasOrdered[i].name == myAutopilotTarget then
             
@@ -53,9 +53,9 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
                 
             end
             
-        end
+          end
         
-    end
+        end
     
  
  # Usaged:
