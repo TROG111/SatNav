@@ -36,7 +36,7 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
       
  4) create a new unit.tick(spbTimer) trigger and insert the following LUA code
     
-    ```
+    ```lua
     myAutopilotTarget = dbHud.getStringValue("SPBAutopilotTargetName")
     if myAutopilotTarget ~= nil and myAutopilotTarget ~= "" and myAutopilotTarget ~= "SatNavNotChanged" then
         local result = json.decode(dbHud.getStringValue("SavedLocations"))
@@ -92,7 +92,7 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
     
  5) With the latest DU patch, SatNav now has a command line capability this provides the following function by typing into the LUA Chat panel:
  
-    a) 'u newLocationName' - you can amend th name of a SatNav location by selecting it from the on screen location list, then typing 'u ' followed by the ew name for that location
+    a) 'u newLocationName' - you can amend the name of a SatNav location by selecting it from the on screen location list, then typing 'u ' followed by the new name for that location
     
     b) 'd SatNav' - this command will delete the currently selected location from the database - use with care ;-)
     
@@ -100,17 +100,21 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
     
     d) 'c Hud' - this will clear all Saved Locations from the Dimencia Hud databank (use with care!)
     
-    e) 'l SatNav' - this will reload all of the default location from the SatNav PB (including any new ones that you may have added in step 4b above
+    e) 'l SatNav' - this will reload all of the default location from the SatNav PB (including any new ones that you may have added in step 4b above)
     
     f) 'l Hud' - this will copy all of the Dimencia Hud stored locations from the Hud's databank into the SatNav databank
     
     g) 'x SatNav' - this command will duplicate/clone the SatNav databank if an additional empty databank has been linked to the PB in slot 5.  The purpose of this feature is to enable users to copy their locations to multiple ships.
+    
+    h) 'a ::pos{<a>,<b>,<c>,<d>,<e>} <location name>' - this command will add a new location. <a>, <b>, <c>, <d> and <e> are the systemid, bodyid, x, y and z coordinates for the new location.  <location name> is an optional name of the new location, if this is left blank then SatNav will generate an automatic location name.
  
   5) When using your Dimencia Hud, you will find that the location you loaded in 3 (above) ha been renamed as 'SatNav Location' and is now available using the Alt+1/Alt+2 keys..  This will also have been set as the destination on the Dim Hud buttons screen.  Unlike previous versions of SatNav, we now only copy across a single location to Dim Hud - this is due to a limitation in the Dim Hud which would cause a cpu overload error if we copied all of the SatNav locations across.
  
  # Known issues:
  
- The order of linking the core/screen/databanks is extremely important.  They should always be: 1) core, 2) screen, 3) satnav databank, 4) Dimencia Hud databank, 5) satanav databank copy (used in the x SatNav command only).
+ The order of linking the core/screen/databanks should always be: 1) core, 2) screen, 3) satnav databank, 4) Dimencia Hud databank, 5) (otional) satanav databank copy (used in the x SatNav command only).
+ 
+
  
  Some users are struggling to locate the DU LUA library folder on their local drives.  This is located below the directory that you originally installed DU.
  
@@ -118,6 +122,8 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
  
  I have recently experience a problem with DimHud linking to the incorrect databank when I did a clean new DimHud configuration.  The outcome of this is that it may corrupt the content of the SatNav databank (for example if DimHud has linked to the SatNav databank).  Therefore, the following is my recommendation:
  a) before you do a DimHud update, always back up your SatNav databank (using the 'x SatNav' command described above) and then remove the backup copy into your inventory; b) immediately after doing a DimHud update, check the databank that is linked to the DimHud pilot seat.  If it is the incorrect databank, then remove the link and manually link to the correct DimHud databank - do this BEFORE activating DimHud for the first time after the update.
+ 
+ On a couple of occasion with 2_1_3 we have found that on sitting down at the DimHud seat the first time, the 'SatNav Location position updated' message is flashed up every 5 seconds on the Hud.  Not sure why this happens (it might be something to do with synchronisation of databank data with the DU server), but getting out of the seat and then sitting back down seems to fix this.
  
  # Version history:
  
@@ -131,4 +137,6 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
  
  2_1_1 - update includes: 1) attempt to try and avoid installation issues with linking databanks in wrong order; 2) added fix for new Space locations which were always being assigned to planets instead of 'Space'; 3) a few bug fixes
  
- 2_1_2 - update includes: 1) improved avoidance of databank linking issues during installation; 3) improved readability of screens: a) highlighting of selected planets/location is now shown by a bar rather than a font colour change; b) 4 LUA parameters have been added to allow users to change the colours for Planet Panel Backgroun; Location Panel Background; Panel font colour; and highlight bar colour.
+ 2_1_2 - update includes: 1) improved avoidance of databank linking issues during installation; 2) improved readability of screens: a) highlighting of selected planets/location is now shown by a bar rather than a font colour change; b) 4 LUA parameters have been added to allow users to change the colours for Planet Panel Backgroun; Location Panel Background; Panel font colour; and highlight bar colour.
+ 
+ 2_1_3 - update includes: 1) fixed issue when using SatNav while seated in DimHud seat, SatNav location was not being read as DimHud only loads the saved locations when it boots; 2) added a new command to add locations from the command line; 3) yet another fix for SatNav bootup to get the correct databank links.
