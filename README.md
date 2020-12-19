@@ -112,7 +112,8 @@ Welcome to Trog's SatNav for Dual Universe. This is a location/bookmark manager 
     
     g) `x SatNav` - this command will duplicate/clone the SatNav databank if an additional empty databank has been linked to the PB in slot 5. The purpose of this feature is to enable users to copy their locations to multiple ships.
 
-    h) `a ::pos{system,planet,lat,lon,alt} Displayname` - will add a new Location to SatNav. Input validation is very basic, thus please use with care.
+    h) `a ::pos{system,planet,lat,lon,alt} Displayname` - will add a new Location to SatNav. Input validation is very basic, thus **please use with care**. 
+    > **There is no real input validation implemented yet and you might very well corrupt your databank.**
  
   5. When using your [Dimencia Hud](https://github.com/Dimencia/DU-Orbital-Hud), you will find that the location you loaded in 3 (above) has been renamed as `**SatNav Location**` and is now available using the `Alt+1/Alt+2` keys.. This will also have been set as the destination on the Dim Hud buttons screen. 
   > Unlike previous versions of SatNav, we now only copy across a single location to Dim Hud - this is due to a limitation in the Dim Hud which would cause a CPU overload error if we copied all of the SatNav locations across.
