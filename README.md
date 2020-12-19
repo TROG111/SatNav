@@ -72,10 +72,11 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
             system.print("Index = "..AutopilotTargetIndex.." "..AtlasOrdered[i].name)          
             UpdateAutopilotTarget()
             dbHud.setStringValue("SPBAutopilotTargetName", "SatNavNotChanged")            
-        end        
+        end     
     end
-end
-```
+`end
+
+
     
  
  # Usaged:
