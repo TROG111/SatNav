@@ -36,25 +36,48 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
       
  4) create a new unit.tick(spbTimer) trigger and insert the following LUA code
     
-        prevAutopilotTarget = myAutopilotTarget
-        
         myAutopilotTarget = dbHud.getStringValue("SPBAutopilotTargetName")
-        
-        if myAutopilotTarget ~= nil and myAutopilotTarget ~= "" and myAutopilotTarget ~= prevAutopilotTarget then
-        
-          for i=1,#AtlasOrdered do
-        
-            if AtlasOrdered[i].name == myAutopilotTarget then
-            
-                AutopilotTargetIndex = i
-                
-                UpdateAutopilotTarget()
-                
+
+if myAutopilotTarget ~= nil and myAutopilotTarget ~= "" and myAutopilotTarget ~= "SatNavNotChanged" then
+    local result = json.decode(dbHud.getStringValue("SavedLocations"))
+    if result ~= nil then
+        _G["SavedLocations"] = result
+        local index = -1
+        local newLocation
+        for k, v in pairs(SavedLocations) do
+            if v.name and v.name == "SatNav Location" then                
+                index = k
+                break
             end
-            
-          end
-        
         end
+        if index ~= -1 then
+            newLocation = SavedLocations[index]
+            index = -1
+            for k, v in pairs(atlas[0]) do
+                if v.name and v.name == "SatNav Location" then
+                    index = k
+                    break
+                end
+            end
+            if index > -1 then
+                atlas[0][index] = newLocation
+            end
+            UpdateAtlasLocationsList()
+            MsgText = newLocation.name .. " position updated"
+        end
+    end
+    for i=1,#AtlasOrdered do
+        if AtlasOrdered[i].name == myAutopilotTarget then
+
+            AutopilotTargetIndex = i
+
+            system.print("Index = "..AutopilotTargetIndex.." "..AtlasOrdered[i].name)
+            UpdateAutopilotTarget()
+
+            dbHud.setStringValue("SPBAutopilotTargetName", "SatNavNotChanged")
+        end
+    end
+end
     
  
  # Usaged:
