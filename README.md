@@ -1,5 +1,5 @@
 # Introduction
-Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager for :pos(.....) locations which includes integration into the Dimecia Hud to enable autopiloting to your stored locations.  SatNav can be used in stand alone mode or as integrated into the Dimencia Hud.  These instructions have been updated for SatNav version 2_1_2.  To install a previous version please contact me directly.
+Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager for :pos(.....) locations which includes integration into the Dimecia Hud to enable autopiloting to your stored locations.  SatNav can be used in stand alone mode or as integrated into the Dimencia Hud.  These instructions have been updated for SatNav version 2_1_3.  To install a previous version please contact me directly.
 
 # Installation:
 1) Ensure that you have the following libraries installed in your DU <ProgramData> (the directory on your local drive in which you installed DU) LUA folder:
@@ -14,16 +14,16 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
     
     planetref.lua and atlas.lua can be obtained from the following GitLab url: https://gitlab.com/JayleBreak/dualuniverse/-/blob/master/DUflightfiles/autoconf/custom/atlas.lua and https://gitlab.com/JayleBreak/dualuniverse/-/blob/master/DUflightfiles/autoconf/custom/planetref.lua.  On the GitLab pages, click the download button and when prompted for a filename, make sure that the filename is only atlas.lua and planetref.lua and not the given long name.
  
- 2) Install a PB onto your ship and link it to: 1) the core, 2) a screen, 3) a new (empty) databank (we shall call this the SatNav databank), 4) Dimencia Hud databank - IN THIS ORDER PLEASE.  The SatNav databank should be either completely empty (remove dynamic content while the databank is in you inventory before placing it) or a SatNav databank from version 2_1_0 or 2_1_1.
+ 2) Install a PB onto your ship and link it to: 1) the core, 2) a screen, 3) a new (empty) databank (we shall call this the SatNav databank), 4) Dimencia Hud databank - IN THIS ORDER PLEASE.  The SatNav databank should be either completely empty (remove dynamic content while the databank is in your inventory before placing it) or a SatNav databank from version 2_1_0 or above.
  
- 3) Copy the most recent SatNav_PB_Paste file (currently that is SatNav_PB_Paste_2_1_2) into you copy paste buffer
+ 3) Copy the most recent SatNav_PB_Paste file (currently that is SatNav_PB_Paste_2_1_3) into you copy paste buffer
  
  4) In game, right click on your SatNav PB and select 'Advanced' / 'Paste LUA configuration from cliboard'
  
  5) Turn on screen, activate PB and you are ready to go.... good luck!
  
  # Integration with Dimencia Hud:
- 1) ensure you have a recent version of the Dimencia Hud already loaded and configured on your pilot seat.  Version 2_1_0 requires its own databank and you should not try to use the Dimencia Hud databank for both 3 and 4 (in the installation), this will likely cause problems and so is not supported.
+ 1) ensure you have a recent version of the Dimencia Hud already loaded and configured on your pilot seat.  Version 2_1_0 onwards requires its own databank and you should not try to use the Dimencia Hud databank for both 3 and 4 (in the installation), this will likely cause problems and so is not supported.
  
  2) edit the LUA in your pilot seat that has the Dimencia Hud installed
  
@@ -113,8 +113,6 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
  # Known issues:
  
  The order of linking the core/screen/databanks should always be: 1) core, 2) screen, 3) satnav databank, 4) Dimencia Hud databank, 5) (otional) satanav databank copy (used in the x SatNav command only).
- 
-
  
  Some users are struggling to locate the DU LUA library folder on their local drives.  This is located below the directory that you originally installed DU.
  
