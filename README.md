@@ -111,6 +111,8 @@ Welcome to Trog's SatNav for Dual Universe. This is a location/bookmark manager 
     f) `l Hud` - this will copy all of the Dimencia Hud stored locations from the Hud's databank into the SatNav databank
     
     g) `x SatNav` - this command will duplicate/clone the SatNav databank if an additional empty databank has been linked to the PB in slot 5. The purpose of this feature is to enable users to copy their locations to multiple ships.
+
+    h) `a ::pos{system,planet,lat,lon,alt} Displayname` - will add a new Location to SatNav. Input validation is very basic, thus please use with care.
  
   5. When using your [Dimencia Hud](https://github.com/Dimencia/DU-Orbital-Hud), you will find that the location you loaded in 3 (above) has been renamed as `**SatNav Location**` and is now available using the `Alt+1/Alt+2` keys.. This will also have been set as the destination on the Dim Hud buttons screen. 
   > Unlike previous versions of SatNav, we now only copy across a single location to Dim Hud - this is due to a limitation in the Dim Hud which would cause a CPU overload error if we copied all of the SatNav locations across.
@@ -142,3 +144,5 @@ Welcome to Trog's SatNav for Dual Universe. This is a location/bookmark manager 
 * 2_1_1 - update includes: 1) attempt to try and avoid installation issues with linking databanks in wrong order; 2) added fix for new Space locations which were always being assigned to planets instead of 'Space'; 3) a few bug fixes
  
 * 2_1_2 - update includes: 1) improved avoidance of databank linking issues during installation; 3) improved readability of screens: a) highlighting of selected planets/location is now shown by a bar rather than a font colour change; b) 4 LUA parameters have been added to allow users to change the colours for Planet Panel Backgroun; Location Panel Background; Panel font colour; and highlight bar colour.
+
+* 2_1_2-merl1 - added textInput "a ::pos{....} Displayname" to add Locations from lua chat console

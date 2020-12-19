@@ -50,4 +50,22 @@ elseif text == "x SatNav" then
     else
         system.print("Please link an empty databank to the programming board")
     end
+elseif string.sub(text,1,2) == "a " then
+    local newLocNamePos = text:find("}") 
+    if newLocNamePos > 0 then
+        -- @TODO: add more validation
+        local newLocPos = string.sub(text,3,newLocNamePos)
+        local newLocName = string.sub(text, newLocNamePos + 2, string.len(text))
+        newLocation(newLocName, newLocPos)
+        if displayPlanetList[1] ~= "" then
+            lastPlanetSelected = displayPlanetList[1]
+            lastLocationSelected = ""
+            buildPlanetLocList(lastPlanetSelected)
+            clearLocDispList()
+            selected = ""
+            CurrentLocationPage=1
+            CurrentPlanetPage=1
+            DrawPlanetList()
+        end
+    end
 end

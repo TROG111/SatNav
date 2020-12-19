@@ -1,5 +1,5 @@
 --[[
-    SatNav version 2_1_2
+    SatNav version 2_1_2-merl1
     Created By TrogLaByte
 
     Discord: Trog#5105
@@ -603,12 +603,22 @@ function loadHudLocations()
 end
 
 
-function newLocation ()
-    local location = system.getWaypointFromPlayerPos()
+function newLocation (xnewLocName, newLocPos)
+    local location
+    if xnewLocName and newLocPos then
+        location = newLocPos
+    else
+        location = system.getWaypointFromPlayerPos()
+    end
     local newLocId = myDatabank.getIntValue("lastNewLoc") + 1
     myDatabank.setIntValue("lastNewLoc",newLocId)
     
-    local newLocName = defaultNewLocName.." ("..newLocId..")"
+    local newLocName
+    if xnewLocName then
+        newLocName = xnewLocName
+    else
+        newLocName = defaultNewLocName.." ("..newLocId..")"
+    end
     
     local num        = ' *([+-]?%d+%.?%d*e?[+-]?%d*)'
     local posPattern = '::pos{' .. num .. ',' .. num .. ',' ..  num .. ',' ..
