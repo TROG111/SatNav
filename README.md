@@ -36,13 +36,10 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
       
  4) create a new unit.tick(spbTimer) trigger and insert the following LUA code
     
-    myAutopilotTarget = dbHud.getStringValue("SPBAutopilotTargetName")
-
-    if myAutopilotTarget ~= nil and myAutopilotTarget ~= "" and myAutopilotTarget ~= "SatNavNotChanged" then
-    
-    local result = json.decode(dbHud.getStringValue("SavedLocations"))
-    
-    if result ~= nil then
+    `myAutopilotTarget = dbHud.getStringValue("SPBAutopilotTargetName")
+    `if myAutopilotTarget ~= nil and myAutopilotTarget ~= "" and myAutopilotTarget ~= "SatNavNotChanged" then
+    `local result = json.decode(dbHud.getStringValue("SavedLocations"))
+    `if result ~= nil then
     
         _G["SavedLocations"] = result
         
