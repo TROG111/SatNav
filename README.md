@@ -1,5 +1,8 @@
 # Introduction
-Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager for :pos(.....) locations which includes integration into the Dimecia Hud to enable autopiloting to your stored locations.  SatNav can be used in stand alone mode or as integrated into the Dimencia Hud.  These instructions have been updated for SatNav version 2_1_3.  To install a previous version please contact me directly.
+Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager for :pos(.....) locations which includes integration into the Dimecia Hud to enable autopiloting to your stored locations.  SatNav can be used in stand alone mode or as integrated into the Dimencia Hud.  These instructions have been updated for SatNav version 2_1_4.  To install a previous version please contact me directly.
+
+# Latest Version
+The latest version is 2_1_4.
 
 # Installation:
 1) Ensure that you have the following libraries installed in your DU <ProgramData> (the directory on your local drive in which you installed DU) LUA folder:
@@ -16,7 +19,7 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
  
  2) Install a PB onto your ship and link it to: 1) the core, 2) a screen, 3) a new (empty) databank (we shall call this the SatNav databank), 4) Dimencia Hud databank - IN THIS ORDER PLEASE.  The SatNav databank should be either completely empty (remove dynamic content while the databank is in your inventory before placing it) or a SatNav databank from version 2_1_0 or above.
  
- 3) Copy the most recent SatNav_PB_Paste file (currently that is SatNav_PB_Paste_2_1_3) into you copy paste buffer
+ 3) Copy the most recent SatNav_PB_Paste file (see section above for the latest version number) into you copy paste buffer
  
  4) In game, right click on your SatNav PB and select 'Advanced' / 'Paste LUA configuration from cliboard'
  
@@ -138,3 +141,5 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
  2_1_2 - update includes: 1) improved avoidance of databank linking issues during installation; 2) improved readability of screens: a) highlighting of selected planets/location is now shown by a bar rather than a font colour change; b) 4 LUA parameters have been added to allow users to change the colours for Planet Panel Backgroun; Location Panel Background; Panel font colour; and highlight bar colour.
  
  2_1_3 - update includes: 1) fixed issue when using SatNav while seated in DimHud seat, SatNav location was not being read as DimHud only loads the saved locations when it boots; 2) added a new command to add locations from the command line; 3) yet another fix for SatNav bootup to get the correct databank links.
+ 
+ 2_1_4 - bug fix for adding new location
