@@ -2,7 +2,7 @@
 Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager for :pos(.....) locations which includes integration into the Dimecia Hud to enable autopiloting to your stored locations.  SatNav can be used in stand alone mode or as integrated into the Dimencia Hud.  These instructions have been updated for SatNav version 2_1_4.  To install a previous version please contact me directly.
 
 # Latest Version
-The latest version is 2_1_4.
+The latest version is 2_1_5.
 
 # Installation:
 1) Ensure that you have the following libraries installed in your DU <ProgramData> (the directory on your local drive in which you installed DU) LUA folder:
@@ -93,9 +93,11 @@ The latest version is 2_1_4.
     
     b) you can edit the initial default locations in the Programming Board and add new entries (this is best used for bulk entry).  Open the PB for LUA editing and access the code in the unit.tick(loadwp) trigger.  Then simply edit or add new entries to this table.  Once you have the new exntries in the table execute the 'l SatNav' command below (5e) to relad the table.
     
- 5) With the latest DU patch, SatNav now has a command line capability this provides the following function by typing into the LUA Chat panel:
+ 5) If you wish to change the coordinates of a SatNav location you can do this one at a time by pressing the 'Update Location' button which will change the coordinates for the selected location to those of the players current position'
+    
+ 6) With the latest DU patch, SatNav now has a command line capability this provides the following function by typing into the LUA Chat panel:
  
-    a) 'u newLocationName' - you can amend the name of a SatNav location by selecting it from the on screen location list, then typing 'u ' followed by the new name for that location
+    a) 'u <newLocationName>' - you can amend the name of a SatNav location by selecting it from the on screen location list, then typing 'u ' followed by the new name for that location <newLocationName>. n.b. the new location name in <newLocationName> must be enclosed in single quotes (e.g. 'My New Location') and can contain spaces and other alphanumeric characters.  You can also change the coordinates for the location at the same time by providing a ::pos{a>,<b>,<c>,<d>,<e>} string.
     
     b) 'd SatNav' - this command will delete the currently selected location from the database - use with care ;-)
     
@@ -109,9 +111,11 @@ The latest version is 2_1_4.
     
     g) 'x SatNav' - this command will duplicate/clone the SatNav databank if an additional empty databank has been linked to the PB in slot 5.  The purpose of this feature is to enable users to copy their locations to multiple ships.
     
-    h) 'a ::pos{<a>,<b>,<c>,<d>,<e>} <location name>' - this command will add a new location. <a>, <b>, <c>, <d> and <e> are the systemid, bodyid, x, y and z coordinates for the new location.  <location name> is an optional name of the new location, if this is left blank then SatNav will generate an automatic location name.  Input validation is very basic, thus **please use with care**. **There is no real input validation implemented yet and you might very well corrupt your databank.**
+    h) 'a ::pos{<a>,<b>,<c>,<d>,<e>} <location name>' - this command will add a new location. <a>, <b>, <c>, <d> and <e> are the systemid, bodyid, x, y and z coordinates for the new location.  <location name> is an optional name of the new location, if this is left blank then SatNav will generate an automatic location name.  
+    
+    i) 'dump SatNav' - this command will write out all of the SatNav locations into the DU logfile.  This is not pretty, but it provides a way to backup your SatNav locations and reload them - requires you to edit the DU logfile; extract the location strings; replace the '&quot;' with double quotes;  and copy them into the SatNav PB.
  
-  5) When using your Dimencia Hud, you will find that the location you loaded in 3 (above) ha been renamed as 'SatNav Location' and is now available using the Alt+1/Alt+2 keys..  This will also have been set as the destination on the Dim Hud buttons screen.  Unlike previous versions of SatNav, we now only copy across a single location to Dim Hud - this is due to a limitation in the Dim Hud which would cause a cpu overload error if we copied all of the SatNav locations across.
+  7) When using your Dimencia Hud, you will find that the location you loaded in 3 (above) ha been renamed as 'SatNav Location' and is now available using the Alt+1/Alt+2 keys..  This will also have been set as the destination on the Dim Hud buttons screen.  Unlike previous versions of SatNav, we now only copy across a single location to Dim Hud - this is due to a limitation in the Dim Hud which would cause a cpu overload error if we copied all of the SatNav locations across.
  
  # Known issues:
  
@@ -143,3 +147,5 @@ The latest version is 2_1_4.
  2_1_3 - update includes: 1) fixed issue when using SatNav while seated in DimHud seat, SatNav location was not being read as DimHud only loads the saved locations when it boots; 2) added a new command to add locations from the command line; 3) yet another fix for SatNav bootup to get the correct databank links.
  
  2_1_4 - bug fix for adding new location
+ 
+ 2_1_5 - added: 1) new 'update location' button; 2) added validation to command line entry of ::pos strings; 3) enabled entry of 'spaces' in locations names entered via the command line
