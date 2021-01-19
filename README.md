@@ -1,10 +1,12 @@
 # Introduction
-Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager for :pos(.....) locations which includes integration into the Dimecia Hud to enable autopiloting to your stored locations.  SatNav can be used in stand alone mode or as integrated into the Dimencia Hud.  These instructions have been updated for SatNav version 2_1_5.  To install a previous version please contact me directly.
+Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager for :pos(.....) locations which includes integration into the Dimecia Hud to enable autopiloting to your stored locations.  SatNav can be used in stand alone mode or as integrated into the Dimencia Hud.  These instructions have been updated for SatNav version 3_0_2.  To install a previous version please contact me directly.
 
 # Latest Version
-The latest version is 2_1_6.
+The latest version is 3_0_2.
 
 # Installation:
+0) Before starting a SatNav update (if you have previously installed SatNav and have an active SatNav Databank) i highly recommend doing a databank backup (in case there are any issues with the update)
+
 1) Ensure that you have the following libraries installed in your DU <ProgramData> (the directory on your local drive in which you installed DU) LUA folder:
 
     <ProgrmData>/DualUniverse/Game/data/lua/cpml/vec3.lua
@@ -17,29 +19,29 @@ The latest version is 2_1_6.
     
     planetref.lua and atlas.lua can be obtained from the following GitLab url: https://gitlab.com/JayleBreak/dualuniverse/-/blob/master/DUflightfiles/autoconf/custom/atlas.lua and https://gitlab.com/JayleBreak/dualuniverse/-/blob/master/DUflightfiles/autoconf/custom/planetref.lua.  On the GitLab pages, click the download button and when prompted for a filename, make sure that the filename is only atlas.lua and planetref.lua and not the given long name.
  
- 2) Install a PB onto your ship and link it to: 1) the core, 2) a screen, 3) a new (empty) databank (we shall call this the SatNav databank), 4) Dimencia Hud databank - IN THIS ORDER PLEASE.  The SatNav databank should be either completely empty (remove dynamic content while the databank is in your inventory before placing it) or a SatNav databank from version 2_1_0 or above.
+ 2) Install a PB onto your ship and link it to: 1) the core, 2) a screen, 3) a new (empty) databank (we shall call this the SatNav databank), 4) Dimencia Hud databank - IN THIS ORDER PLEASE, 5) (optionally a backup databank for SatNav).  The SatNav databank should be either completely empty (remove dynamic content while the databank is in your inventory before placing it) or a SatNav databank from version 2_1_0 or above.
  
  3) Copy the most recent SatNav_PB_Paste file (see section above for the latest version number) into you copy paste buffer
  
  4) In game, right click on your SatNav PB and select 'Advanced' / 'Paste LUA configuration from cliboard'
  
- 5) Turn on screen, activate PB and you are ready to go.... good luck!
+ 5) Turn on screen, activate PB and you are ready to go.... good luck!  If you are updating SatNav then the script will automatically update the databank to the latest version and should inform you that this has completed.
  
  # Integration with Dimencia Hud:
  1) ensure you have a recent version of the Dimencia Hud already loaded and configured on your pilot seat.  Version 2_1_0 onwards requires its own databank and you should not try to use the Dimencia Hud databank for both 3 and 4 (in the installation), this will likely cause problems and so is not supported.
  
  2) Since version 4.9.00 of Dim Hud, integration for SatNav has been built in and therefore does not require any changes to the DimHud code (as was the case with previous version)
  
- 3) after installing Dimencia Hud, check which databank it has linked to and make appropriate change if necessary (i.e. if it is linked to the wrong databank)
+ 3) After installing Dimencia Hud, check which databank it has linked to and make appropriate change if necessary (i.e. if it is linked to the wrong databank)
        
- 4) face the pilot seat and right click mouse, selected Advanced/Edit Lua Parameters to edit the Dimencia Hud lua parameters.  Select the following two parameters and ensure that they are active: 1) useTheseSettings and UseSatNav.  Sit on the Dimencia Hud pilot seat and then exit the seat (this should ensure that the Dimencia Hud variables are written to the Dim Hud databank)
+ 4) Face the pilot seat and right click mouse, selected Advanced/Edit Lua Parameters to edit the Dimencia Hud lua parameters.  Select the following two parameters and ensure that they are active: 1) useTheseSettings and UseSatNav.  Sit on the Dimencia Hud pilot seat and then exit the seat (this should ensure that the Dimencia Hud variables are written to the Dim Hud databank)
  
  # Usaged:
  1) By default the PB is programmed with a selection of locations including the market places on Alioth.  These will be automatically loaded into your SatNav databank the first time that you use the application.
  
- 2) The lefthand (light blue) panel of the SatNav lists all the DU planets.  You can page up/down this list using the correspondingly coloured arrow buttons below the table.  Clicking on a specific planet will display the list of Stored Locations for than planet in the righthand (purple) panel.
+ 2) The lefthand (light blue) panel of the SatNav lists all the DU planets.  You can page up/down this list using the correspondingly coloured arrow buttons below the table.  Clicking on a specific planet will display the list of Stored Locations for than planet in the righthand (purple) panel.  You can also sort these by either Alphanumeric (AZ) or Distances (KM) by pressing the 'sort' button.
  
- 3) You can page up/down the list of Stored Locations using the correspondingly coloured (purple) arrow buttons below the table.  Clicking on a specific location will print the locations coordinates into the LUA chat and will set your destination to that location.  In addition, and if you have integrated with Dimencia Hud, the selected location will be sent to your pilot seat ready for use the next time you engage autopilot in the Hud.  It is also possible to use SatNav while remaining seated in the Pilot Seat and the selected location will be sent to your running Dimencia Hud.
+ 3) You can page up/down the list of Stored Locations using the correspondingly coloured (purple) arrow buttons below the table.  Clicking on a specific location will print the locations coordinates into the LUA chat and will set your destination to that location.  In addition, and if you have integrated with Dimencia Hud, the selected location will be sent to your pilot seat ready for use the next time you engage autopilot in the Hud.  It is also possible to use SatNav while remaining seated in the Pilot Seat and the selected location will be sent to your running Dimencia Hud. You can also sort the locations by either Alphanumeric (AZ) or Distances (KM) by pressing the 'sort' button.
  
  4) If you wish to add a new location to the SatNav databank this can be done in a couple of ways:
  
@@ -63,15 +65,21 @@ The latest version is 2_1_6.
     
     f) 'l Hud' - this will copy all of the Dimencia Hud stored locations from the Hud's databank into the SatNav databank
     
-    g) 'x SatNav' - this command will duplicate/clone the SatNav databank if an additional empty databank has been linked to the PB in slot 5.  The purpose of this feature is to enable users to copy their locations to multiple ships.
+    g) 'backup' - this command will duplicate/clone the SatNav databank if an additional empty databank has been linked to the PB in slot 5.  The purpose of this feature is to enable users to copy their locations to multiple ships.
     
     h) 'a ::pos{<a>,<b>,<c>,<d>,<e>} <location name>' - this command will add a new location. <a>, <b>, <c>, <d> and <e> are the systemid, bodyid, x, y and z coordinates for the new location.  <location name> is an optional name of the new location, if this is left blank then SatNav will generate an automatic location name.  
     
     i) 'dump SatNav' - this command will write out all of the SatNav locations into the DU logfile.  This is not pretty, but it provides a way to backup your SatNav locations and reload them - requires you to edit the DU logfile; extract the location strings; replace the '&quot;' with double quotes;  and copy them into the SatNav PB.
     
     j) 'h' - help will display this list of command line commands.
+    
+    k) 'restore' - this will restore the contents of the SatNav databank from the backup copy.
  
-  7) When using your Dimencia Hud, you will find that the location you loaded in 3 (above) ha been renamed as 'SatNav Location' and is now available using the Alt+1/Alt+2 keys..  This will also have been set as the destination on the Dim Hud buttons screen.  Unlike previous versions of SatNav, we now only copy across a single location to Dim Hud - this is due to a limitation in the Dim Hud which would cause a cpu overload error if we copied all of the SatNav locations across.
+  7) When using your Dimencia Hud, you will find that the location you loaded in 3 (above) has been renamed as 'SatNav Location' and is now available using the Alt+1/Alt+2 keys..  This will also have been set as the destination on the Dim Hud buttons screen.  Unlike previous versions of SatNav, we now only copy across a single location to Dim Hud - this is due to a limitation in the Dim Hud which would cause a cpu overload error if we copied all of the SatNav locations across.
+  
+  8) SatNav supports tagging of your locations using the 'tag' buttons (top right of screen) - currently this supports tags for Markets, Mines, Crash Sites, Bases or Favourites.  To set/unset a tag for a specific location: a) click on the desired location; b) click on the desired tag.  Locations can have 0-4 tags.
+  
+  9) There are 6 filter buttons (middle of screen) which allow you to filter the locations displayed by the tags you have set. The filters are: Planet, Markets, Mines, Crash Sites, Bases and Favourites.
  
  # Known issues:
  
@@ -87,6 +95,8 @@ The latest version is 2_1_6.
  On a couple of occasion with 2_1_3 we have found that on sitting down at the DimHud seat the first time, the 'SatNav Location position updated' message is flashed up every 5 seconds on the Hud.  Not sure why this happens (it might be something to do with synchronisation of databank data with the DU server), but getting out of the seat and then sitting back down seems to fix this.
  
  If the SatNav PB has been activated via a Detection Zone then you may find that you cannot set a waypoint from SatNav, this is an issue with activating PBs from DZ which do not set the owning player correctly and hence SatNav is unable to set a waypoint for the player.  Therefore, I recommend always acivating SatNav by directly pressing 'f' on the PB.
+ 
+ Due to DU limitations on the distance a player can be from a Programming Board connected to a databank, I have added a heartbeat function which checks to see if the databank has been unloaded from the players client.  If it detects that the databank is unloaded, then the PB will do a soft exit.
  
  # Version history:
  
@@ -109,3 +119,5 @@ The latest version is 2_1_6.
  2_1_5 - added: 1) new 'update location' button; 2) added validation to command line entry of ::pos strings; 3) enabled entry of 'spaces' in locations names entered via the command line
  
  2_1_6 - fixed 1) problem with 'new location' and 'update location' always assigning location to Alioth; 2) added a heartbeat mechanism so that SatNav will auto turn off if the player moves out of range (and the SatNav databank is unloaded by DU); 3) added a 'delete location' button to the main screen
+ 
+ 3_0_2 - added: 1) support for location tags (adding, removing and filtering); 2) sorting of planets and locations by alphanumeric name or distances, 3) restore from backup command line; 4) heartbeat for players moving too far from programming board.
