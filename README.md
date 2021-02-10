@@ -2,7 +2,7 @@
 Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager for :pos(.....) locations which includes integration into the Dimecia Hud to enable autopiloting to your stored locations.  SatNav can be used in stand alone mode or as integrated into the Dimencia Hud.  These instructions have been updated for SatNav version 3_0_2.  To install a previous version please contact me directly.
 
 # Latest Version
-The latest version is 3_0_2.
+The latest version is 3_0_3.
 
 # Installation:
 0) Before starting a SatNav update (if you have previously installed SatNav and have an active SatNav Databank) i highly recommend doing a databank backup (in case there are any issues with the update)
@@ -121,3 +121,5 @@ The latest version is 3_0_2.
  2_1_6 - fixed 1) problem with 'new location' and 'update location' always assigning location to Alioth; 2) added a heartbeat mechanism so that SatNav will auto turn off if the player moves out of range (and the SatNav databank is unloaded by DU); 3) added a 'delete location' button to the main screen
  
  3_0_2 - added: 1) support for location tags (adding, removing and filtering); 2) sorting of planets and locations by alphanumeric name or distances, 3) restore from backup command line; 4) heartbeat for players moving too far from programming board.
+ 
+ 3_0_3 - added: 1) scrollbars to planet and location panels and removed the page up/down buttons respectively; 2) added validation to 'u'/update commands to try and catch any attempts to update a location without a name.
