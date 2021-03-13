@@ -1,8 +1,10 @@
 # Introduction
-Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager for :pos(.....) locations which includes integration into the Dimecia Hud to enable autopiloting to your stored locations.  SatNav can be used in stand alone mode or as integrated into the Dimencia Hud.  These instructions have been updated for SatNav version 3_0_2.  To install a previous version please contact me directly.
+Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager for :pos(.....) locations which includes integration into the Dimecia Hud to enable autopiloting to your stored locations.  SatNav can be used in stand alone mode or as integrated into the Dimencia Hud.  These instructions have been updated for SatNav version 3_0_4.  To install a previous version please contact me directly.
+
+Due to the 'cowboy' development behaviour of the Dimencia Hud team I will be removing all integration support for SatNav with the DimHud platform.  I will leave the existing code in place in SatNav, however, players use this code entirely at their own risk,.  I do not guarentee the consistency or quality of any data stored in the DimHud databank if you install SatNav alongside DimHud.  Neither will I provide any support for issues relating to this integration.  If you have any issues relating to SatNav and Integration with DimHud then please address these with the DimHud Team directly - from my experience over the past 6 months, the root cause of 85% of SatNav users issues were either 1) mistakes by the user during their installation of Dimencia Hud; 3) bug propogated from DimHud that affected Satav.
 
 # Latest Version
-The latest version is 3_0_3.
+The latest version is 3_0_4.
 
 # Installation:
 0) Before starting a SatNav update (if you have previously installed SatNav and have an active SatNav Databank) i highly recommend doing a databank backup (in case there are any issues with the update)
@@ -123,3 +125,5 @@ The latest version is 3_0_3.
  3_0_2 - added: 1) support for location tags (adding, removing and filtering); 2) sorting of planets and locations by alphanumeric name or distances, 3) restore from backup command line; 4) heartbeat for players moving too far from programming board.
  
  3_0_3 - added: 1) scrollbars to planet and location panels and removed the page up/down buttons respectively; 2) added validation to 'u'/update commands to try and catch any attempts to update a location without a name.
+ 
+ 3_0_4 - SatNav will now delete all DimHud saved locations and thus avoid contamination from Dimencia Hud introduced bugs.
