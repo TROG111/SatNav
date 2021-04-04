@@ -1,3 +1,12 @@
+```diff
+- This is not the official SatNav Github. It is a working copy for my personal experiments and contributions.
+- It will most propably be outdated or broken.
+```
+# All credits for SatNav go to @TROG111
+##You can find the official SatNav Git at [https://github.com/TROG111/SatNav](https://github.com/TROG111/SatNav).
+
+
+
 # Introduction
 Welcome to Trog's SatNav for Dual Universe. This is a location/bookmark manager for `:pos(.....)` locations which includes integration into the [Dimecia Hud](https://github.com/Dimencia/DU-Orbital-Hud) to enable autopiloting to your stored locations. SatNav can be used in stand alone mode or as integrated into the [Dimencia Hud](https://github.com/Dimencia/DU-Orbital-Hud). These instructions have been updated for SatNav version 2_1_2. To install a previous version please contact me directly.
 
