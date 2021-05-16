@@ -4,7 +4,7 @@ Welcome to Trog's SatNav for Dual Universe.  This is a location/bookmark manager
 Due to the 'cowboy' development behaviour of the Dimencia Hud team I will be removing all integration support for SatNav with the DimHud platform.  I will leave the existing code in place in SatNav, however, players use this code entirely at their own risk,.  I do not guarentee the consistency or quality of any data stored in the DimHud databank if you install SatNav alongside DimHud.  Neither will I provide any support for issues relating to this integration.  If you have any issues relating to SatNav and Integration with DimHud then please address these with the DimHud Team directly - from my experience over the past 6 months, the root cause of 85% of SatNav users issues were either 1) mistakes by the user during their installation of Dimencia Hud; 3) bug propogated from DimHud that affected Satav.
 
 # Latest Version
-The latest version is 3_0_4.
+The latest version is 3_1_0.
 
 # Installation:
 0) Before starting a SatNav update (if you have previously installed SatNav and have an active SatNav Databank) i highly recommend doing a databank backup (in case there are any issues with the update)
